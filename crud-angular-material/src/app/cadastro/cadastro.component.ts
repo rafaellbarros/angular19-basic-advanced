@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { ClienteService } from '../cliente.service';
 import { Cliente } from './cliente';
 
 @Component({
@@ -25,7 +26,9 @@ import { Cliente } from './cliente';
 export class CadastroComponent {
   cliente: Cliente = Cliente.newCliente();
 
+  constructor(private clienteService: ClienteService) {}
+
   salvar() {
-    console.log(this.cliente);
+    this.clienteService.salvar(this.cliente);
   }
 }
