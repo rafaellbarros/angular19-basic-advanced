@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { Cliente } from './cliente';
 
 @Component({
   selector: 'app-cadastro',
@@ -21,4 +22,10 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './cadastro.component.html',
   styleUrl: './cadastro.component.scss',
 })
-export class CadastroComponent {}
+export class CadastroComponent {
+  cliente: Cliente = Cliente.newCliente();
+
+  salvar() {
+    console.log(this.cliente);
+  }
+}
